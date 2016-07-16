@@ -72,27 +72,11 @@ Connecting to the bundled MySQL server from outside the container
 -----------------------------------------------------------------
 
 The first time that you run your container, a new user `admin` with all privileges
-will be created in MySQL with a random password. To get the password, check the logs
-of the container by running:
-
-	docker logs $CONTAINER_ID
-
-You will see an output like the following:
-
-	========================================================================
-	You can now connect to this MySQL Server using:
-
-	    mysql -uadmin -a45ngaGSw5aU1 -h<host> -P<port>
-
-	Please remember to change the above password as soon as possible!
-	MySQL user 'root' has no password but only allows local connections
-	========================================================================
-
-In this case, `47nnf4FweaKu` is the password allocated to the `admin` user.
+will be created in MySQL with password "pass"
 
 You can then connect to MySQL:
 
-	 mysql -uadmin -p47nnf4FweaKu
+	 mysql -uadmin -ppass
 
 Remember that the `root` user does not allow connections from outside the container -
 you should use this `admin` user instead!
